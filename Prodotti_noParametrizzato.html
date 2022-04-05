@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    	<meta charset="UTF-8">
+    	<title>Immagini prodotti</title>
+</head>
+<script>
+	function avviso(numFoto){
+        	var idImmagine = "img" + numFoto;
+        	switch(numFoto){
+            		case 1:
+                		document.getElementById(idImmagine).title = "Forno; Prezzo : 2000";
+            		break;
+
+            		case 2:
+                		document.getElementById(idImmagine).title = "Stampante; Prezzo : 6 miliardi";
+            		break;
+
+            		case 3:
+                		document.getElementById(idImmagine).title = "Frigo; Prezzo : 1500";
+            		break;
+
+            		case 4:
+                		document.getElementById(idImmagine).title = "Aspirapolvere; Prezzo : 100";
+            		break;
+
+            		case 5:
+                		document.getElementById(idImmagine).title = "Tablet; Prezzo : 600";
+            		break;
+
+			case 6:
+				document.getElementById(idImmagine).title = "Telefono; Prezzo : 400";
+			break;
+        	}
+       }
+
+</script>
+<body>
+    	<center><h3> PRODOTTI </h3></center>
+    	<p id="out"></p>
+    	<img src="forno.jpg" alt="Forno Prezzo : 2000" height="50px" widht="50px" onmouseover="avviso(1)" id="img1">
+    	<img src="stampante.jpg" alt="Stampante Prezzo : 6 miliardi" height="50px" widht="50px"  onmouseover="avviso(2)" id="img2">
+    	<img src="frigo.jpg"  alt="Frigo Prezzo : 1500" height="50px" widht="50px" onmouseover="avviso(3)" id="img3">
+    	<img src="aspirapolvere.jpg" alt="Aspirapolvere Prezzo : 100" height="50px" widht="50px" onmouseover="avviso(4)" id="img4">
+    	<img src="tablet.jpg" alt="Tablet Prezzo : 600"  height="50px" widht="50px" onmouseover="avviso(5)" id="img5">
+	<img src="telefono.jpg" alt="Telefono Prezzo : 400" height="50px" widht="50px" onmouseover="avviso(6)" id="img6">
+</body>
+</html>

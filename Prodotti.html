@@ -1,0 +1,98 @@
+<!--Inserisci in una pagina web le immagini di N prodotti di largo consumo. 
+    Quando l'utente passa con il mouse sopra un'immagine, vengono mostrati il nome ed il prezzo del prodotto. 
+    Il valore inserito dall'utente in fase d'esecuzione. Effettuare il controllo input.-->
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<script>
+	 function v(x, tot) {
+
+            for (var i = 1; i <= tot; i++) {
+                if (x == i) {
+                    document.getElementById(x).style.visibility = "visible";
+                }else{
+                    document.getElementById(i).style.visibility = "hidden";
+                }
+            }
+}
+
+</script>
+</head>
+
+<body>
+    	<fieldset>
+            <legend>Quante immagini devi visualizzare?</legend>
+            <p><label for="numero"> num </label><input type="text" id="numero" size="6">
+            <button type="button" onclick="conta()">Carica le immagini</button>
+            <button type="button" onclick="javascript:location.reload()">Ricarica la pagina</button>
+        	</p>
+   	</fieldset>
+	  <div id="header">
+
+    </div>
+    <div id="header">
+    </div>
+
+    <script>
+        function conta() {
+
+            var numImmagini = document.getElementById("numero").value;
+            var contaimg = 0;
+
+            if (isNaN(numImmagini) || (numImmagini <= 0)) {
+                alert("Numero non valido");
+            } else {
+                for (var i = 1; i <= numImmagini; i++) {
+
+                    var img = document.createElement("img");
+                    contaimg = contaimg + 1;
+                    switch (contaimg) {
+                        	case 1:
+                            	img.src = "forno.jpg";
+                            	break;
+                        
+				case 2:
+                            	img.src = "frigo.jpg";
+                            	break;
+                        	
+				case 3:
+                            	img.src = "aspirapolvere.jpg";
+                            	break;
+                        
+				case 4:
+                            	img.src = "telefono.jpg";
+                            	break;
+                        
+				case 5:
+                            	img.src = "stampante.jpg";
+					break;
+			     
+				case 6:
+                            	img.src = "tablet.jpg";
+                            	contaimg = 0;
+                    }
+
+                    img.id = i;
+                    img.width = "125";
+                    img.height = "125";
+                    var src = document.getElementById("header");
+                    src.appendChild(img);
+
+                    var a = "v('" + i + "','" + numImmagini + "')";
+                    var b = "visualizza immagine " + i;
+                    var element = document.createElement("input");
+                    element.setAttribute("type", "button");
+                    element.setAttribute("value", b);
+                    element.setAttribute("onmouseover", a);
+                    src.appendChild(element);
+                    var e1 = document.createElement("br");
+                    src.appendChild(e1);
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
