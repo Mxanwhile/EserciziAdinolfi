@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prezzo non Parametrizzato</title>
+    <script>
+
+        var pTot=0;
+        function aggiungi(){
+            var pParziale = document.getElementById("inputValore").value;
+            if(isNaN(pParziale)){
+                alert("Nessun Inserimento");
+            }
+            else{
+                pTot+=eval(pParziale);
+                document.getElementById("casella").innerHTML="Prezzo Totale = " + pTot;
+            }
+            
+        }
+    </script>
+</head>
+
+<body>
+    <input id="inputValore">
+    <button onclick="aggiungi()">INSERIRE</button>
+    <p id="casella">Prezzo Totale: €0</p>
+</body>
+</html>
