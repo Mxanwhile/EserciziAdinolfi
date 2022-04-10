@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Alunni Parametrizzato</title>
+
+    <script>
+
+   	var dimensione = 0;
+        var numAlunni = 0;
+        var label = document.createElement("label");
+        var input = document.createElement("input");
+        var button = document.createElement("button");
+        var casella = document.createElement("p");
+
+        label.innerHTML="Inserire nome alunno: ";
+        button.innerHTML="INSERIRE";
+        button.setAttribute("onclick", "calcola()");
+        casella.setAttribute("id", "casella");
+        casella.innerHTML="Numero degli alunni inseriti: 0";
+
+        function inserimento(){
+            numAlunni=eval(document.getElementById("inputAlunni").value);
+            document.body.innerHTML="";
+            document.body.appendChild(label);
+            document.body.appendChild(input);
+            document.body.appendChild(button);
+            document.body.appendChild(casella);
+        }
+
+        function calcola(){
+            if(dimensione>=numAlunni){
+                alert("Hai inserito tutti");
+            }
+            else{
+                dimensione++;
+                alert("Alunno Inserito");
+                document.getElementById("casella").innerHTML = "Numero Alunni Inseriti: " + dimensione;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>Inserisci il numero degli alunni</h3>
+    <input id="inputAlunni">
+    <button onclick="inserimento()"> Inserisci: </button>
+</body>
+</html>
