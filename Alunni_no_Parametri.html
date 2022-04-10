@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Es Alunni Senza Parametri</title>
+    <script>
+
+        var dimensione = 0;
+
+        function calcola(){
+            if(dimensione>=12){
+                alert("Inserito tutti");
+            }
+            else{
+                dimensione++;
+                alert("Inserito");
+                document.getElementById("campoOut").innerHTML = "Numero Alunni Inseriti:" + dimensione;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h3>Inserire nome studente</h3>
+    <input>
+    <button onclick="calcola()">Inserire</button>
+    <p id="campoOut">Numero Alunni Inseriti: 0</p>
+</body>
+</html>
